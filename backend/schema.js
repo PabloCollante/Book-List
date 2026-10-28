@@ -14,7 +14,7 @@ export const books = sqliteTable('books', {
 //Tabla para los pasajes u opinones relacionadas a un libro 
 export const quotes = sqliteTable('quotes', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  bookId: integer('book_id').references(() => book.id), //foreingKey
+  bookId: integer('book_id').references(() => books.id), //foreingKey
   content: text('content').notNull(),
   page: integer('page')
 });
