@@ -1,18 +1,9 @@
 import express from "express";
 import cors from "cors";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { mkdirSync } from "node:fs";
+import { uploadsDir } from "./middleware/upload.js";
 
 const app = express();
 const PORT = 3000;
-
-//directorio del archivo
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const uploadsDir = path.join(currentDir, "uploads");
-
-//crea uploads si todavia no existe
-mkdirSync(uploadsDir, { recursive: true })
 
 // permite que el front de vite lea las respuestas de la api
 app.use(

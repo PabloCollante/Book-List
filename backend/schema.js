@@ -1,11 +1,11 @@
-import { sqliteTable, text, integer } from 'drizzel-orm/sqlite-core'
+import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
 
 //Tabla Principal
 export const books = sqliteTable('books', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   title: text('title').notNull(),
   author: text('author').notNull(),
-  pubisher:text('publisher').notNull(),
+  publisher: text('publisher').notNull(),
   rating: integer('rating'), //puntuacion del 1 al 5
   coverImage: text('cover_image'), //enlace de la imagen
   createdAt: integer('created_at', { mode: 'timestamp' })
